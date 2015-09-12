@@ -1,0 +1,19 @@
+# Database
+ENGINE = 'django.db.backends.postgresql_psycopg2'
+NAME = 'iitbeats'
+USER = 'iitbeats'
+PASSWORD = 'iitbeats'
+HOST = 'localhost'
+PORT = 5432
+
+
+# Debug
+DEBUG = True
+
+
+# security
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+SESSION_COOKIE_PATH = '/'
+CSRF_COOKIE_PATH = '/'
+SECRET_KEY = ''

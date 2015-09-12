@@ -1,0 +1,131 @@
+ERROR [2015-09-12 11:12:05,190] [django.request] [base] [Process:8709] [Thread:140517218707200] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/middleware.py", line 16, in process_request
+    request.session = self.SessionStore(session_key)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/backends/cache.py", line 14, in __init__
+    self._cache = caches[settings.SESSION_CACHE_ALIAS]
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 113, in __getitem__
+    cache = _create_cache(alias)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 88, in _create_cache
+    return backend_cls(location, params)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/backends/memcached.py", line 167, in __init__
+    import memcache
+ImportError: No module named 'memcache'
+ERROR [2015-09-12 11:12:05,884] [django.request] [base] [Process:8709] [Thread:140517210314496] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/middleware.py", line 16, in process_request
+    request.session = self.SessionStore(session_key)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/backends/cache.py", line 14, in __init__
+    self._cache = caches[settings.SESSION_CACHE_ALIAS]
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 113, in __getitem__
+    cache = _create_cache(alias)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 88, in _create_cache
+    return backend_cls(location, params)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/backends/memcached.py", line 167, in __init__
+    import memcache
+ImportError: No module named 'memcache'
+ERROR [2015-09-12 11:12:06,039] [django.request] [base] [Process:8709] [Thread:140517210314496] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/middleware.py", line 16, in process_request
+    request.session = self.SessionStore(session_key)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/backends/cache.py", line 14, in __init__
+    self._cache = caches[settings.SESSION_CACHE_ALIAS]
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 113, in __getitem__
+    cache = _create_cache(alias)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 88, in _create_cache
+    return backend_cls(location, params)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/backends/memcached.py", line 167, in __init__
+    import memcache
+ImportError: No module named 'memcache'
+ERROR [2015-09-12 11:12:06,126] [django.request] [base] [Process:8709] [Thread:140517210314496] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/middleware.py", line 16, in process_request
+    request.session = self.SessionStore(session_key)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/contrib/sessions/backends/cache.py", line 14, in __init__
+    self._cache = caches[settings.SESSION_CACHE_ALIAS]
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 113, in __getitem__
+    cache = _create_cache(alias)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/__init__.py", line 88, in _create_cache
+    return backend_cls(location, params)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/cache/backends/memcached.py", line 167, in __init__
+    import memcache
+ImportError: No module named 'memcache'
+WARNING [2015-09-12 11:12:25,904] [django.request] [base] [Process:8758] [Thread:140269560796928] Not Found: /
+WARNING [2015-09-12 11:12:26,260] [django.request] [base] [Process:8758] [Thread:140269552404224] Not Found: /favicon.ico
+WARNING [2015-09-12 11:12:26,321] [django.request] [base] [Process:8758] [Thread:140269336917760] Not Found: /favicon.ico
+WARNING [2015-09-12 11:12:26,327] [django.request] [base] [Process:8758] [Thread:140269328525056] Not Found: /favicon.ico
+WARNING [2015-09-12 11:15:57,148] [django.request] [base] [Process:9034] [Thread:139679097673472] Not Found: /
+WARNING [2015-09-12 11:16:00,745] [django.request] [base] [Process:9034] [Thread:139679089280768] Not Found: /api/feeds/
+ERROR [2015-09-12 11:16:03,675] [django.request] [base] [Process:9034] [Thread:139679080888064] Internal Server Error: /api/
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 164, in get_response
+    response = response.render()
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/response.py", line 158, in render
+    self.content = self.rendered_content
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/response.py", line 71, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/renderers.py", line 668, in render
+    template = loader.get_template(self.template)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+django.template.base.TemplateDoesNotExist: rest_framework/api.html
+ERROR [2015-09-12 11:16:11,325] [django.request] [base] [Process:9034] [Thread:139679106066176] Internal Server Error: /api/shop/
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 164, in get_response
+    response = response.render()
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/response.py", line 158, in render
+    self.content = self.rendered_content
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/response.py", line 71, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/renderers.py", line 668, in render
+    template = loader.get_template(self.template)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+django.template.base.TemplateDoesNotExist: rest_framework/api.html
+ERROR [2015-09-12 11:16:52,611] [django.request] [base] [Process:9086] [Thread:139968839362304] Internal Server Error: /api/shop/
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 164, in get_response
+    response = response.render()
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/response.py", line 158, in render
+    self.content = self.rendered_content
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/response.py", line 71, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/renderers.py", line 668, in render
+    template = loader.get_template(self.template)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+django.template.base.TemplateDoesNotExist: rest_framework/api.html
+ERROR [2015-09-12 11:17:53,988] [django.request] [base] [Process:9125] [Thread:140580343215872] Internal Server Error: /api/shop/
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 164, in get_response
+    response = response.render()
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/response.py", line 158, in render
+    self.content = self.rendered_content
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/response.py", line 71, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/renderers.py", line 668, in render
+    template = loader.get_template(self.template)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+django.template.base.TemplateDoesNotExist: rest_framework/api.html
+ERROR [2015-09-12 11:17:56,062] [django.request] [base] [Process:9125] [Thread:140580343215872] Internal Server Error: /api/
+Traceback (most recent call last):
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/core/handlers/base.py", line 164, in get_response
+    response = response.render()
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/response.py", line 158, in render
+    self.content = self.rendered_content
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/response.py", line 71, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/rest_framework/renderers.py", line 668, in render
+    template = loader.get_template(self.template)
+  File "/home/dheerendra/.Envs/iitbeats/lib/python3.4/site-packages/django/template/loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+django.template.base.TemplateDoesNotExist: rest_framework/api.html

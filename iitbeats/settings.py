@@ -12,18 +12,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import logging.config
+from .config import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6z28j8%xuze(7arp9jbr5bbmwx5-p86ulo)eb=boxsb_a+^#n4'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +33,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'shop',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +67,11 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
 WSGI_APPLICATION = 'iitbeats.wsgi.application'
 
 
@@ -76,7 +79,15 @@ WSGI_APPLICATION = 'iitbeats.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default':{
+        'ENGINE': ENGINE,
+        'NAME': NAME,
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
+    },
+    'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -96,8 +107,100 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Logging
+LOGGING_CONFIG = None
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s [%(asctime)s] [%(name)s] [%(module)s] [Process:%(process)d] '
+                      '[Thread:%(thread)d] %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'filters': {
+        'suppress_deprecated_warnings': {
+            '()': 'iitbeats.filters.SuppressDeprecatedWarnings',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'file_django': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'verbose'
+        },
+        'file_application': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/application.log'),
+            'formatter': 'verbose',
+            'filters': ['suppress_deprecated_warnings'],
+        },
+        'file_feed': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/feeds.log'),
+            'formatter': 'verbose'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['file_application'],
+            'level': 'INFO',
+        },
+        'gcm': {
+            'handlers': ['file_application'],
+            'level': 'DEBUG',
+        },
+        'requests':{
+            'handlers': ['file_application'],
+            'level': 'WARNING',
+        },
+        'django': {
+            'handlers': ['file_django', 'mail_admins'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'feed': {
+            'handlers': ['file_feed'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
+}
+logging.config.dictConfig(LOGGING)
 
-STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+
+FILE_UPLOAD_PERMISSIONS = 0o755
+
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o755
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+SECURE_BROWSER_XSS_FILTER = True
