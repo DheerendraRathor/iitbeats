@@ -17,3 +17,7 @@ STATIC_URL = '/static/'
 SESSION_COOKIE_PATH = '/'
 CSRF_COOKIE_PATH = '/'
 SECRET_KEY = ''
+
+# Datetime
+TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = True

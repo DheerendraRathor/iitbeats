@@ -3,3 +3,4 @@ staticfiles
 media
 __pycache__
 iitbeats/config.py
+logs/*

@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'shop',
+    'food',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -204,3 +205,7 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 SECURE_BROWSER_XSS_FILTER = True
+
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
